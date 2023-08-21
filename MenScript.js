@@ -1,16 +1,29 @@
-/* 
-        const mensagens = []; // Simulação de banco de dados
 
-        function adicionarMensagem() {
-            const identificador = document.getElementById("identificador").value;
-            const conteudo = document.getElementById("conteudo").value;
+const mensagens = []; // Simulação de banco de dados
 
-            mensagens.push({ identificador, conteudo });
+function adicionarMensagem() {
+    const identificador = document.getElementById("identificador").value;
+    const conteudo = document.getElementById("conteudo").value;
 
-            exibirMensagens();
-        }
-    */
+    mensagens.push({ identificador, conteudo });
 
+    exibirMensagens();
+}
+
+/*const mensagens = JSON.parse(localStorage.getItem('mensagens')) || [];
+
+function adicionarMensagem() {
+    const identificador = document.getElementById("identificador").value;
+    const conteudo = document.getElementById("conteudo").value;
+ 
+    mensagens.push({ identificador, conteudo });
+ 
+    // Salve as mensagens atualizadas no localStorage
+    localStorage.setItem('mensagens', JSON.stringify(mensagens));
+ 
+    exibirMensagens();
+}
+*/
 function exibirMensagens() {
     const mensagensDiv = document.getElementById("mensagens");
     mensagensDiv.innerHTML = "";
