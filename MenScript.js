@@ -1,6 +1,7 @@
 
 const mensagens = []; // Simulação de banco de dados
 
+// Função para adicionar mensagens
 function adicionarMensagem() {
     const identificador = document.getElementById("identificador").value;
     const conteudo = document.getElementById("conteudo").value;
@@ -9,7 +10,7 @@ function adicionarMensagem() {
 
     exibirMensagens();
 }
-
+// Função para exibir as mensagens
 function exibirMensagens() {
     const mensagensDiv = document.getElementById("mensagens");
     mensagensDiv.innerHTML = "";
@@ -22,15 +23,3 @@ function exibirMensagens() {
 }
 
 document.getElementById("adicionar").addEventListener("click", adicionarMensagem);
-
-// Recuperar parâmetros da URL (simulação)
-const urlParams = new URLSearchParams(window.location.search);
-const idParam = urlParams.get('id');
-
-if (idParam) {
-    const mensagemEncontrada = mensagens.find(mensagem => mensagem.identificador === idParam);
-    if (mensagemEncontrada) {
-        document.getElementById("identificador").value = mensagemEncontrada.identificador;
-        document.getElementById("conteudo").value = mensagemEncontrada.conteudo;
-    }
-}
